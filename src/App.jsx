@@ -31,43 +31,60 @@ function App() {
   return (
     <>
       <div className="parent">
-        <div className="times-prayer">
-          <div className="city">
-            <h3>المدينة</h3>
-            <select
-              className="select"
-              onChange={(e) => {
-                setCity(e.target.value);
-              }}
-            >
-              <option value="Cairo">القاهرة</option>
-              <option value="Alexandria">الإسكندرية</option>
-              <option value="Giza">الجيزة</option>
-              <option value="Faiyum">الفيوم</option>
-              <option value="Aswan">أسوان</option>
-              <option value="Luxor">الأقصر</option>
-              <option value="Mansoura">المنصورة</option>
-              <option value="Tanta">طنطا</option>
-              <option value="Sohag">سوهاج</option>
-            </select>
-          </div>
+        <div className="black">
+          <div className="times-prayer">
+            <div className="city">
+              <h3>المدينة</h3>
+              <select
+                className="select"
+                onChange={(e) => {
+                  setCity(e.target.value);
+                }}
+              >
+                <option value="Cairo">القاهرة</option>
+                <option value="Alexandria">الإسكندرية</option>
+                <option value="Giza">الجيزة</option>
+                <option value="Faiyum">الفيوم</option>
+                <option value="Aswan">أسوان</option>
+                <option value="Luxor">الأقصر</option>
+                <option value="Mansoura">المنصورة</option>
+                <option value="Tanta">طنطا</option>
+                <option value="Sohag">سوهاج</option>
+              </select>
+            </div>
 
-          <div className="date">
-            <h3>التاريخ</h3>
-            <p>{date}</p>
-          </div>
+            <div className="date">
+              <h3>التاريخ</h3>
+              <p>{date}</p>
+            </div>
 
-          {timings.Fajr ? (
-            <>
-              <PrayerNameAndTime name={"الفجر"} time={formatTime(timings.Fajr)} />
-              <PrayerNameAndTime name={"الظهر"} time={formatTime(timings.Dhuhr)} />
-              <PrayerNameAndTime name={"العصر"} time={formatTime(timings.Asr)} />
-              <PrayerNameAndTime name={"المغرب"} time={formatTime(timings.Maghrib)} />
-              <PrayerNameAndTime name={"العشاء"} time={formatTime(timings.Isha)} />
-            </>
-          ) : (
-            <p>جاري تحميل البيانات...</p>
-          )}
+            {timings.Fajr ? (
+              <>
+                <PrayerNameAndTime
+                  name={"الفجر"}
+                  time={formatTime(timings.Fajr)}
+                />
+                <PrayerNameAndTime
+                  name={"الظهر"}
+                  time={formatTime(timings.Dhuhr)}
+                />
+                <PrayerNameAndTime
+                  name={"العصر"}
+                  time={formatTime(timings.Asr)}
+                />
+                <PrayerNameAndTime
+                  name={"المغرب"}
+                  time={formatTime(timings.Maghrib)}
+                />
+                <PrayerNameAndTime
+                  name={"العشاء"}
+                  time={formatTime(timings.Isha)}
+                />
+              </>
+            ) : (
+              <p>جاري تحميل البيانات...</p>
+            )}
+          </div>
         </div>
       </div>
     </>
